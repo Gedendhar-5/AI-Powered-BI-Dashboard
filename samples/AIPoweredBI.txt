@@ -1,0 +1,177 @@
+# 📊 AI-Powered BI Dashboard
+### Upload Excel/CSV → Auto Clean → Smart Dashboard → Ask Anything with Gemini AI
+ 
+---
+ 
+## 🚀 What This Project Does
+ 
+Upload any Excel or CSV file and instantly get:
+- **Automatic data cleaning** — nulls, duplicates, type fixing, messy headers
+- **AI-generated dashboard** — Gemini decides the best charts for your data
+- **Plain-English insights** — written under every chart automatically
+- **Anomaly detection** — flags outliers with explanations
+- **Natural language chatbot** — ask anything about your data in plain English
+- **Executive summary** — one-click AI-written business report from your data
+- **Forecast tab** — 30-day trend predictions on time-series columns
+- **Multi-file merge** — join two sheets on a common column and query both
+- **Export** — download dashboard as PDF or PNG
+---
+ 
+## 🧠 Tech Stack
+ 
+| Layer | Tool |
+|---|---|
+| Frontend / App | Streamlit |
+| Data Engine | Pandas + NumPy |
+| Charts | Plotly Express |
+| Excel Reading | openpyxl |
+| AI Brain | Google Gemini 1.5 Flash |
+| Gemini SDK | google-generativeai |
+| PDF Export | kaleido + reportlab |
+| Deployment | Streamlit Cloud (free) |
+ 
+---
+ 
+## 🗂️ Project Structure
+ 
+```
+ai-bi-dashboard/
+│
+├── app.py                  # Main Streamlit app entry point
+├── requirements.txt        # All dependencies
+├── .env                    # Your Gemini API key (never commit this)
+├── .gitignore              # Ignores .env and cache files
+│
+├── modules/
+│   ├── cleaner.py          # Data cleaning engine (Pandas)
+│   ├── analyzer.py         # Auto chart selection + Gemini insight generation
+│   ├── chatbot.py          # NL Q&A chatbot with conversation memory
+│   ├── forecaster.py       # Trend + 30-day forecast (statsmodels)
+│   ├── exporter.py         # PDF / PNG export logic
+│   └── merger.py           # Multi-file join logic
+│
+├── components/
+│   ├── sidebar.py          # File upload + settings sidebar
+│   ├── health_card.py      # Data health summary card (nulls, dupes, outliers)
+│   ├── dashboard.py        # Main dashboard layout renderer
+│   └── chat_ui.py          # Chat sidebar UI component
+│
+└── assets/
+    └── style.css           # Custom CSS for FAANG-level UI polish
+```
+ 
+---
+ 
+## ⚙️ Environment Setup (Windows PowerShell + VS Code)
+ 
+### Step 1 — Prerequisites
+Make sure you have Python 3.10+ installed. Check with:
+```powershell
+python --version
+```
+ 
+### Step 2 — Clone and open in VS Code
+```powershell
+git clone https://github.com/YOUR_USERNAME/ai-bi-dashboard.git
+cd ai-bi-dashboard
+code .
+```
+ 
+### Step 3 — Create virtual environment (PowerShell)
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+ 
+> If you get a policy error, run this first:
+> ```powershell
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+ 
+### Step 4 — Install dependencies
+```powershell
+pip install -r requirements.txt
+```
+ 
+### Step 5 — Add your Gemini API key
+Create a `.env` file in the root folder:
+```powershell
+New-Item .env
+```
+Add this inside `.env`:
+```
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+Get your free key from: https://aistudio.google.com/app/apikey
+ 
+### Step 6 — Run locally
+```powershell
+streamlit run app.py
+```
+ 
+---
+ 
+## 🌐 Free Deployment (Streamlit Cloud)
+ 
+1. Push your code to GitHub (make sure `.env` is in `.gitignore`)
+2. Go to https://share.streamlit.io
+3. Connect your GitHub repo
+4. Under **Advanced settings → Secrets**, add:
+   ```
+   GEMINI_API_KEY = "your_key_here"
+   ```
+5. Click **Deploy** — your app goes live at a free public URL instantly
+---
+ 
+## 💡 Key Features Deep-Dive
+ 
+### 🔍 Auto Anomaly Narrator
+Not just a red dot — Gemini writes a sentence explaining *why* the anomaly matters using surrounding data context.
+ 
+### 🧠 Column Relationship Discovery
+Gemini auto-finds correlations you didn't ask for: *"Revenue and ad spend are 0.87 correlated — consider reviewing ad ROI."*
+ 
+### 📝 Executive Summary Generator
+One click → Gemini writes a formatted business-ready summary of your entire dataset.
+ 
+### 🔗 Multi-Sheet Merge Q&A
+Upload 2 Excel files, ask questions across both joined on a key column — like SQL JOINs but in plain English.
+ 
+### 📈 Forecast Tab
+Time-series columns get a 30-day predicted trend using statsmodels linear regression + Gemini narrative.
+ 
+---
+ 
+## 💰 Cost Breakdown
+ 
+| Service | Cost |
+|---|---|
+| Streamlit Cloud | Free |
+| GitHub | Free |
+| Google Gemini API (via Jio AI+ plan) | Free |
+| All Python libraries | Free / Open source |
+| **Total monthly cost** | **₹0** |
+ 
+---
+ 
+## 🛠️ Development Phases
+ 
+| Phase | Week | What Gets Built |
+|---|---|---|
+| Phase 1 | Week 1 | File upload + data cleaning + health card |
+| Phase 2 | Week 2 | AI auto-visualization + Gemini insights |
+| Phase 3 | Week 3 | NL chatbot + conversation memory |
+| Phase 4 | Week 4 | Forecast + export + deploy |
+ 
+---
+ 
+## 📌 Notes for AI Coding Assistant
+ 
+- **Terminal**: Always use Windows PowerShell commands
+- **IDE**: VS Code
+- **Virtual env activation**: `.\venv\Scripts\Activate.ps1`
+- **Never use Linux-style paths** — always Windows backslash style or PowerShell equivalents
+- **Gemini model**: Use `gemini-1.5-flash` (fast + free tier friendly)
+- **Streamlit secrets**: Use `st.secrets["GEMINI_API_KEY"]` in production, `os.getenv("GEMINI_API_KEY")` locally
+- **No paid services** — every dependency must be free or open source
+- **Dashboard quality target**: FAANG-level UI — custom CSS, smooth layout, professional card design, not default Streamlit widgets
