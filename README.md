@@ -86,7 +86,7 @@ You upload a file. The AI does the rest.
 
 > **Dashboard — KPI Cards + AI Charts**
 
-![Dashboard](<image.png>)
+![Dashboard](<samples/image.png>)
 
 
 > **Data Health Report**
