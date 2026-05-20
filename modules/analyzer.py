@@ -19,23 +19,25 @@ from typing import List, Dict, Any, Optional
 import numpy as np
 import pandas as pd
 import streamlit as st
-from groq import Groq
+import google.generativeai as genai
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Gemini client — shared initialiser
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _get_model() -> Groq:
+def _get_model() -> genai.GenerativeModel:
     try:
-        api_key = st.secrets["GROQ_API_KEY"]
+        api_key = st.secrets["GEMINI_API_KEY"]
     except Exception:
-        api_key = os.getenv("GROQ_API_KEY")
+        api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         raise ValueError(
-            "GROQ_API_KEY not found. Add it to .env locally "
+            "GEMINI_API_KEY not found. Add it to .env locally "
             "or to Streamlit Cloud secrets in production."
         )
-    return Groq(api_key=api_key)
+    genai.configure(api_key=api_key)
+    return genai.GenerativeModel("gemini-2.5-flash")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -81,89 +83,59 @@ Rules:
 - If categorical columns exist with <=8 unique values: use bar or pie
 """
 
-    response = model.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.3,
-    )
+    response = model.generate_content(prompt)
+    raw = response.text.strip()
 
-    raw = response.choices[0].message.content.strip()
-
+    # Strip markdown code fences if Gemini adds them
     raw = re.sub(r"^```(?:json)?\s*", "", raw, flags=re.MULTILINE)
     raw = re.sub(r"\s*```$", "", raw, flags=re.MULTILINE)
     raw = raw.strip()
 
     configs = []
-
     try:
         configs = json.loads(raw)
-
     except json.JSONDecodeError:
-
+        # Try to pull a JSON array out of noisy text
         match = re.search(r"\[.*?\]", raw, re.DOTALL)
-
         if match:
             try:
                 configs = json.loads(match.group())
-
             except json.JSONDecodeError:
                 return []
-
         else:
             return []
 
     if not isinstance(configs, list):
         return []
 
-    valid_cols = {
-        c["name"] for c in gemini_summary.get("columns", [])
-    }
-
-    allowed_types = {
-        "bar",
-        "line",
-        "pie",
-        "scatter",
-        "histogram",
-        "box",
-    }
-
+    # Validate each config against actual column names
+    valid_cols = {c["name"] for c in gemini_summary.get("columns", [])}
+    allowed_types = {"bar", "line", "pie", "scatter", "histogram", "box"}
     validated = []
 
     for cfg in configs:
-
         if not isinstance(cfg, dict):
             continue
-
         chart_type = str(cfg.get("chart_type", "")).lower()
         x_col = cfg.get("x")
         y_col = cfg.get("y")
 
         if chart_type not in allowed_types:
             continue
-
         if x_col not in valid_cols:
             continue
-
         if y_col and y_col not in valid_cols:
             cfg["y"] = None
-
-        cfg.setdefault(
-            "title",
-            f"{chart_type.title()} Chart"
-        )
-
-        cfg.setdefault(
-            "insight",
-            "This chart shows the distribution of your data."
-        )
+        cfg.setdefault("title",   f"{chart_type.title()} Chart")
+        cfg.setdefault("insight", "This chart shows the distribution of your data.")
 
         validated.append(cfg)
-
         if len(validated) == 6:
             break
 
     return validated
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # KPI cards
 # ─────────────────────────────────────────────────────────────────────────────
@@ -245,12 +217,8 @@ def get_anomaly_narratives(
         )
 
         try:
-            response  = model.chat.completions.create(
-    model="llama-3.3-70b-versatile",
-    messages=[{"role": "user", "content": prompt}],
-    temperature=0.4,
-)
-            narrative = response.choices[0].message.content.strip().replace("\n", " ")
+            response  = model.generate_content(prompt)
+            narrative = response.text.strip().replace("\n", " ")
             # Truncate if Gemini ignores the word limit
             words = narrative.split()
             if len(words) > 40:
@@ -301,24 +269,31 @@ def ask_gemini_about_data(
     )
 
     # Build the Gemini contents list: alternate user/model turns
-    messages = [{"role": "system", "content": system_context}]
+    contents = []
 
-    for turn in history[-10:]:
-        role = "user" if turn["role"] == "user" else "assistant"
-        messages.append({
-            "role": role,
-            "content": turn["content"]
-        })
-
-    messages.append({
+    # Inject system context as the first user turn (Gemini Flash doesn't have system role)
+    contents.append({
         "role": "user",
-        "content": question
+        "parts": [{"text": system_context}],
+    })
+    contents.append({
+        "role": "model",
+        "parts": [{"text": "Understood. I'm ready to answer questions about this dataset."}],
     })
 
-    response = model.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=messages,
-        temperature=0.4,
-    )
+    # Add conversation history (last 10 turns to stay within token limits)
+    for turn in history[-10:]:
+        role = "user" if turn["role"] == "user" else "model"
+        contents.append({
+            "role": role,
+            "parts": [{"text": turn["content"]}],
+        })
 
-    return response.choices[0].message.content.strip()
+    # Add the new question
+    contents.append({
+        "role": "user",
+        "parts": [{"text": question}],
+    })
+
+    response = model.generate_content(contents)
+    return response.text.strip()
