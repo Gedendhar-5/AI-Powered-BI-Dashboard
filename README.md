@@ -30,7 +30,8 @@ AI-Powered BI Dashboard Upload Excel/CSV → Auto Clean → Smart Dashboard → 
 
 <br/>
 
-> **"This is what happens when you give a senior data analyst an AI brain, a Plotly renderer, and zero sleep."**
+> **"The work of a senior data analyst — automated, AI-narrated, and delivered in a dark-mode dashboard.
+Upload any CSV or Excel file and walk away with cleaned data, AI-generated charts, plain-English insights, anomaly detection, 30-day forecasts, and a downloadable PDF report.."**
 
 <br/>
 
