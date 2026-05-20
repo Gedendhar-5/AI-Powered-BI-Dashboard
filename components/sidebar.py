@@ -33,21 +33,6 @@ def render_sidebar() -> object | None:
 
         st.divider()
 
-        # ── Upload section ──
-        st.markdown(
-            "**📁 Upload Your Data**",
-        )
-
-        uploaded_file = st.file_uploader(
-            label="Drop a CSV or Excel file here",
-            type=["csv", "xlsx", "xls"],
-            help="Supported: .csv, .xlsx, .xls — max 200 MB",
-        )
-
-        st.caption("✓ CSV · ✓ Excel (.xlsx / .xls) · Max 200 MB")
-
-        st.divider()
-
         # ── Tip ──
         st.info(
             "💡 **Sidebar closed?**  \nClick the **›** arrow at the top-left of the screen to reopen.",
@@ -97,4 +82,4 @@ def render_sidebar() -> object | None:
             unsafe_allow_html=True,
         )
 
-    return uploaded_file
+    return None
