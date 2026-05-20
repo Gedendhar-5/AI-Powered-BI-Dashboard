@@ -144,7 +144,6 @@ def run_forecasts(
 
     return results
 
-
 def _get_narrative(
     col: str,
     slope: float,
@@ -154,56 +153,70 @@ def _get_narrative(
     forecast_y: np.ndarray,
     horizon: int,
 ) -> str:
-    """Call Gemini for a plain-English narrative of the forecast trend."""
-    hist_avg  = round(float(np.mean(historical_y)), 2)
-    hist_last = round(float(historical_y[-1]),      2)
-    fc_end    = round(float(forecast_y[-1]),        2)
-    pct_chg   = round((fc_end - hist_last) / max(abs(hist_last), 1) * 100, 1)
+    """Call Groq for a plain-English narrative of the forecast trend."""
+
+    hist_avg = round(float(np.mean(historical_y)), 2)
+    hist_last = round(float(historical_y[-1]), 2)
+    fc_end = round(float(forecast_y[-1]), 2)
+
+    pct_chg = round(
+        (fc_end - hist_last) / max(abs(hist_last), 1) * 100,
+        1
+    )
 
     prompt = (
-        f'You are a business analyst interpreting a {horizon}-day forecast for column "{col}". '
-        f"Historical average: {hist_avg}. Last actual value: {hist_last}. "
-        f"Forecasted value in {horizon} days: {fc_end} ({pct_chg:+.1f}%). "
-        f"Regression R²: {r_sq:.2f}. Trend: {trend}. "
-        f"Write exactly 2 sentences in plain English summarising what this trend means "
-        f"for the business. Be specific. Do not start with 'The'."
+        f'You are a business analyst interpreting a {horizon}-day '
+        f'forecast for column "{col}". '
+        f'Historical average: {hist_avg}. '
+        f'Last actual value: {hist_last}. '
+        f'Forecasted value in {horizon} days: '
+        f'{fc_end} ({pct_chg:+.1f}%). '
+        f'Regression R²: {r_sq:.2f}. '
+        f'Trend: {trend}. '
+        f'Write exactly 2 sentences in plain English '
+        f'summarising what this trend means for the business. '
+        f'Be specific. Do not start with "The".'
     )
 
     try:
-    model = _get_model()
+        model = _get_model()
 
-    response = model.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.3,
-    )
+        response = model.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{
+                "role": "user",
+                "content": prompt
+            }],
+            temperature=0.3,
+        )
 
-    narrative = (
-        response.choices[0]
-        .message.content
-        .strip()
-        .replace("\n", " ")
-    )
+        narrative = (
+            response.choices[0]
+            .message.content
+            .strip()
+            .replace("\n", " ")
+        )
 
-    words = narrative.split()
+        words = narrative.split()
 
-    if len(words) > 60:
-        narrative = " ".join(words[:60]) + "…"
+        if len(words) > 60:
+            narrative = " ".join(words[:60]) + "…"
 
-    return narrative
+        return narrative
 
-except Exception:
+    except Exception:
 
-    direction_word = {
-        "upward": "rise",
-        "downward": "fall",
-        "flat": "remain stable",
-    }[trend]
+        direction_word = {
+            "upward": "rise",
+            "downward": "fall",
+            "flat": "remain stable",
+        }[trend]
 
-    return (
-        f'Based on historical data, "{col}" is projected to '
-        f'{direction_word} by approximately {abs(pct_chg):.1f}% '
-        f'over the next {horizon} days. '
-        f'Regression R² = {r_sq:.2f} — '
-        f'{"reliable" if r_sq > 0.6 else "low confidence"} fit.'
-    )
+        return (
+            f'Based on historical data, "{col}" is projected to '
+            f'{direction_word} by approximately '
+            f'{abs(pct_chg):.1f}% over the next '
+            f'{horizon} days. '
+            f'Regression R² = {r_sq:.2f} — '
+            f'{"reliable" if r_sq > 0.6 else "low confidence"} fit.'
+        )
