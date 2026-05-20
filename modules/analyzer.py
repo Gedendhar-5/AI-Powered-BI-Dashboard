@@ -276,31 +276,15 @@ def ask_gemini_about_data(
     )
 
     # Build the Gemini contents list: alternate user/model turns
-    contents = []
+    messages = [{"role": "system", "content": system_context}]
+for turn in history[-10:]:
+    role = "user" if turn["role"] == "user" else "assistant"
+    messages.append({"role": role, "content": turn["content"]})
+messages.append({"role": "user", "content": question})
 
-    # Inject system context as the first user turn (Gemini Flash doesn't have system role)
-    contents.append({
-        "role": "user",
-        "parts": [{"text": system_context}],
-    })
-    contents.append({
-        "role": "model",
-        "parts": [{"text": "Understood. I'm ready to answer questions about this dataset."}],
-    })
-
-    # Add conversation history (last 10 turns to stay within token limits)
-    for turn in history[-10:]:
-        role = "user" if turn["role"] == "user" else "model"
-        contents.append({
-            "role": role,
-            "parts": [{"text": turn["content"]}],
-        })
-
-    # Add the new question
-    contents.append({
-        "role": "user",
-        "parts": [{"text": question}],
-    })
-
-    response = model.generate_content(contents)
-    return response.text.strip()
+response = model.chat.completions.create(
+    model="llama-3.3-70b-versatile",
+    messages=messages,
+    temperature=0.4,
+)
+return response.choices[0].message.content.strip()
