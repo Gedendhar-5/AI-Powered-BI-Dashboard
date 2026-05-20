@@ -20,7 +20,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import google.generativeai as genai
-
+from groq import Groq
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Gemini client — shared initialiser
