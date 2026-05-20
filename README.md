@@ -115,11 +115,7 @@ You upload a file. The AI does the rest.
 
 > **Export PDF**
 
-<!-- SCREENSHOT: paste Export tab screenshot here -->
-```
-[ paste screenshot of the Export tab ]
-```
-
+![pdf](<samples/9D Download Report.png>)
 <br/>
 
 ---
