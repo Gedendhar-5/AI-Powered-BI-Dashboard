@@ -211,4 +211,4 @@ def _stat_tile(value: str, label: str, warn: bool = False) -> None:
         </div>
         """,
         unsafe_allow_html=True,
-    )
+)
