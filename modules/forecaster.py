@@ -26,7 +26,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import google.generativeai as genai
-
+from groq import Groq
 
 @dataclass
 class ForecastResult:
@@ -40,15 +40,17 @@ class ForecastResult:
     narrative: str                  # Gemini-written interpretation
 
 
-def _get_model() -> genai.GenerativeModel:
+def _get_model() -> Groq:
     try:
-        api_key = st.secrets["GEMINI_API_KEY"]
+        api_key = st.secrets["GROQ_API_KEY"]
     except Exception:
-        api_key = os.getenv("GEMINI_API_KEY")
+        api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
-        raise ValueError("GEMINI_API_KEY not found in .env or Streamlit secrets.")
-    genai.configure(api_key=api_key)
-    return genai.GenerativeModel("gemini-1.5-flash")
+        raise ValueError(
+            "GROQ_API_KEY not found. Add it to .env locally "
+            "or to Streamlit Cloud secrets in production."
+        )
+    return Groq(api_key=api_key)
 
 
 def run_forecasts(
@@ -169,8 +171,12 @@ def _get_narrative(
 
     try:
         model     = _get_model()
-        response  = model.generate_content(prompt)
-        narrative = response.text.strip().replace("\n", " ")
+        response  = model.chat.completions.create(
+    model="llama-3.3-70b-versatile",
+    messages=[{"role": "user", "content": prompt}],
+    temperature=0.3,
+)
+narrative = response.choices[0].message.content.strip().replace("\n", " ")
         words     = narrative.split()
         if len(words) > 60:
             narrative = " ".join(words[:60]) + "…"
