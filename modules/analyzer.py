@@ -87,58 +87,81 @@ Rules:
     messages=[{"role": "user", "content": prompt}],
     temperature=0.3,
 )
+
 raw = response.choices[0].message.content.strip()
 
-    # Strip markdown code fences if Gemini adds them
-    raw = re.sub(r"^```(?:json)?\s*", "", raw, flags=re.MULTILINE)
-    raw = re.sub(r"\s*```$", "", raw, flags=re.MULTILINE)
-    raw = raw.strip()
+# Strip markdown code fences if Gemini adds them
+raw = re.sub(r"^```(?:json)?\s*", "", raw, flags=re.MULTILINE)
+raw = re.sub(r"\s*```$", "", raw, flags=re.MULTILINE)
+raw = raw.strip()
 
-    configs = []
-    try:
-        configs = json.loads(raw)
-    except json.JSONDecodeError:
-        # Try to pull a JSON array out of noisy text
-        match = re.search(r"\[.*?\]", raw, re.DOTALL)
-        if match:
-            try:
-                configs = json.loads(match.group())
-            except json.JSONDecodeError:
-                return []
-        else:
+configs = []
+
+try:
+    configs = json.loads(raw)
+
+except json.JSONDecodeError:
+    # Try to pull a JSON array out of noisy text
+    match = re.search(r"\[.*?\]", raw, re.DOTALL)
+
+    if match:
+        try:
+            configs = json.loads(match.group())
+
+        except json.JSONDecodeError:
             return []
 
-    if not isinstance(configs, list):
+    else:
         return []
 
-    # Validate each config against actual column names
-    valid_cols = {c["name"] for c in gemini_summary.get("columns", [])}
-    allowed_types = {"bar", "line", "pie", "scatter", "histogram", "box"}
-    validated = []
+if not isinstance(configs, list):
+    return []
 
-    for cfg in configs:
-        if not isinstance(cfg, dict):
-            continue
-        chart_type = str(cfg.get("chart_type", "")).lower()
-        x_col = cfg.get("x")
-        y_col = cfg.get("y")
+# Validate each config against actual column names
+valid_cols = {c["name"] for c in gemini_summary.get("columns", [])}
 
-        if chart_type not in allowed_types:
-            continue
-        if x_col not in valid_cols:
-            continue
-        if y_col and y_col not in valid_cols:
-            cfg["y"] = None
-        cfg.setdefault("title",   f"{chart_type.title()} Chart")
-        cfg.setdefault("insight", "This chart shows the distribution of your data.")
+allowed_types = {
+    "bar",
+    "line",
+    "pie",
+    "scatter",
+    "histogram",
+    "box",
+}
 
-        validated.append(cfg)
-        if len(validated) == 6:
-            break
+validated = []
 
-    return validated
+for cfg in configs:
 
+    if not isinstance(cfg, dict):
+        continue
 
+    chart_type = str(cfg.get("chart_type", "")).lower()
+    x_col = cfg.get("x")
+    y_col = cfg.get("y")
+
+    if chart_type not in allowed_types:
+        continue
+
+    if x_col not in valid_cols:
+        continue
+
+    if y_col and y_col not in valid_cols:
+        cfg["y"] = None
+
+    cfg.setdefault("title", f"{chart_type.title()} Chart")
+
+    cfg.setdefault(
+        "insight",
+        "This chart shows the distribution of your data."
+    )
+
+    validated.append(cfg)
+
+    if len(validated) == 6:
+        break
+
+return validated
 # ─────────────────────────────────────────────────────────────────────────────
 # KPI cards
 # ─────────────────────────────────────────────────────────────────────────────
