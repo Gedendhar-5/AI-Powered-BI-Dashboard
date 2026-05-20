@@ -89,12 +89,10 @@ You upload a file. The AI does the rest.
 ![Dashboard](<samples/image.png>)
 
 
-> **Data Health Report**
+> **Data Health Report + Visual Board**
 
-<!-- SCREENSHOT: paste health card screenshot here -->
-```
-[ paste screenshot of the Health tab — health score, column pills, outlier detail ]
-```
+![Health Board](<samples/image(1).png>)
+![Visualization](<samples/image(2).png>)
 
 <br/>
 
