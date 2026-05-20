@@ -1,8 +1,7 @@
-
-<br/>
+<div align="center">
 
 ```
-█████╗ ██╗    ██████╗ ██╗    ██████╗  █████╗ ███████╗██╗  ██╗██████╗  ██████╗  █████╗ ██████╗ ██████╗
+ █████╗ ██╗    ██████╗ ██╗    ██████╗  █████╗ ███████╗██╗  ██╗██████╗  ██████╗  █████╗ ██████╗ ██████╗
 ██╔══██╗██║    ██╔══██╗██║    ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔═══██╗██╔══██╗██╔══██╗██╔══██╗
 ███████║██║    ██████╔╝██║    ██║  ██║███████║███████╗███████║██████╔╝██║   ██║███████║██████╔╝██║  ██║
 ██╔══██║██║    ██╔══██╗██║    ██║  ██║██╔══██║╚════██║██╔══██║██╔══██╗██║   ██║██╔══██║██╔══██╗██║  ██║
@@ -10,25 +9,20 @@
 ╚═╝  ╚═╝╚═╝    ╚═════╝ ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝
 ```
 
-<h3>
-  <samp>Upload any dataset &nbsp;→&nbsp; AI cleans it &nbsp;→&nbsp; Gemini visualises it &nbsp;→&nbsp; Ask anything in plain English</samp>
-</h3>
+**Your data. Cleaned. Visualised. Understood. In seconds.**
+
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.35-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![Gemini](https://img.shields.io/badge/Gemini_1.5_Flash-Google_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://aistudio.google.com)
+[![Plotly](https://img.shields.io/badge/Plotly-5.22-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](https://plotly.com)
+[![Deploy](https://img.shields.io/badge/Deploy-Streamlit_Cloud-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://share.streamlit.io)
+[![Cost](https://img.shields.io/badge/Monthly_Cost-₹0-10b981?style=for-the-badge)]()
+[![License](https://img.shields.io/badge/License-MIT-6366f1?style=for-the-badge)](LICENSE)
 
 <br/>
 
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.35-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini_1.5_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)
-![Plotly](https://img.shields.io/badge/Plotly-5.22-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
-
-![Cost](https://img.shields.io/badge/Monthly_Cost-₹_0-10b981?style=for-the-badge)
-![Privacy](https://img.shields.io/badge/Your_Data-Never_Stored-6366f1?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-f59e0b?style=for-the-badge)
-
-<br/>
-
-> **"The work of a senior data analyst — automated, AI-narrated, and delivered in a dark-mode dashboard.
-Upload any CSV or Excel file and walk away with cleaned data, AI-generated charts, plain-English insights, anomaly detection, 30-day forecasts, and a downloadable PDF report.."**
+> *The work of a senior data analyst — automated, AI-narrated, and delivered in a dark-mode dashboard.*
+> *Upload any CSV or Excel file and walk away with cleaned data, AI-generated charts, plain-English insights, anomaly detection, 30-day forecasts, and a downloadable PDF report.*
 
 <br/>
 
@@ -38,478 +32,533 @@ Upload any CSV or Excel file and walk away with cleaned data, AI-generated chart
 
 <br/>
 
-## ⚡ What Is This
+## ◈   What Problem This Solves
 
-**AI-Powered BI Dashboard** is a full-stack data intelligence application that replaces the first 4 hours of any data analyst's morning. Drop in a CSV or Excel file — the system automatically cleans it, detects data quality issues, picks the most meaningful charts using Gemini AI, writes plain-English business insights under each chart, flags statistical anomalies, answers any question you ask in natural language with full conversation memory, and forecasts the next 30 days of any time-series column.
+Every business has spreadsheets. Almost nobody has a data analyst sitting next to them 24/7 to clean those spreadsheets, pick the right charts, explain what the numbers mean, catch the outliers that matter, and forecast what comes next.
 
-No SQL. No Python knowledge required. No paid cloud services. **₹0/month.**
+This dashboard replaces that workflow entirely. It does the full job of a data analyst — automatically, in your browser, at zero cost — using Google Gemini AI as the intelligence layer and a production-grade Python stack underneath.
+
+You upload a file. The AI does the rest.
 
 <br/>
 
 ---
 
-<br/>
-
-## 🗺️ Capabilities
-
+## ◈   Capabilities
 
 ```
-
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                     │
-│   UPLOAD ANY FILE          AUTO-CLEAN              AI VISUALISE                     │
-│   ─────────────────        ──────────────          ─────────────────                │
-│   CSV · XLSX · XLS    →    Nulls filled       →    Gemini picks the                 │
-│   Up to 200 MB             Dupes removed           best 6 chart types               │
-│   Multi-encoding           Headers fixed           for your columns                 │
-│   support                  Types coerced           Bar · Line · Pie                 │
-│                            Outliers flagged        Scatter · Histogram              │
-│                            Health scored           Box · Donut                      │
-│                                                    2-sentence AI insight            │
-│                                                    under every chart                │
+│   UPLOAD ANY FILE          AUTO-CLEAN              AI VISUALISE                    │
+│   ─────────────────        ──────────────          ─────────────────               │
+│   CSV · XLSX · XLS    →    Nulls filled       →    Gemini picks the               │
+│   Up to 200 MB             Dupes removed           best 6 chart types              │
+│   Multi-encoding           Headers fixed           for your columns                │
+│   support                  Types coerced           Bar · Line · Pie               │
+│                            Outliers flagged        Scatter · Histogram             │
+│                            Health scored           Box · Donut                    │
+│                                                    2-sentence AI insight           │
+│                                                    under every chart               │
 │                                                                                     │
-│   ASK ANYTHING             DETECT ANOMALIES        FORECAST TRENDS                  │
-│   ─────────────────        ──────────────          ─────────────────                │
-│   Plain-English Q&A   →    IQR detection      →    OLS linear regression            │
-│   Multi-turn memory        Per-column stats        Up to 90-day horizon             │
-│   Starter questions        Box-plot visual         95% confidence band              │
-│   Follow-up support        Gemini narrates         Daily slope + R² score           │
-│   No SQL needed            why it matters          Gemini trend narrative           │
-│                            Business context                                         │
+│   ASK ANYTHING             DETECT ANOMALIES        FORECAST TRENDS                 │
+│   ─────────────────        ──────────────          ─────────────────               │
+│   Plain-English Q&A   →    IQR detection      →    OLS linear regression          │
+│   Multi-turn memory        Per-column stats        Up to 90-day horizon            │
+│   Starter questions        Box-plot visual         95% confidence band             │
+│   Follow-up support        Gemini narrates         Daily slope + R² score          │
+│   No SQL needed            why it matters          Gemini trend narrative          │
+│                            Business context                                        │
 │                                                                                     │
 │   EXPORT EVERYTHING                                                                 │
-│   ─────────────────────────────────────────────────────────────────────             │
-│   Download cleaned CSV  ·  Generate full PDF report  ·  Charts embedded in PDF      │
+│   ─────────────────────────────────────────────────────────────────────            │
+│   Download cleaned CSV  ·  Generate full PDF report  ·  Charts embedded in PDF    │
 │                                                                                     │
 └─────────────────────────────────────────────────────────────────────────────────────┘
-
 ```
-<br/>
-
----
-
-<br/>
-
-## 🛠️ Exact Tech Stack
-
-| # | Layer | Technology | Version | Role in This Project |
-|---|-------|-----------|---------|---------------------|
-| 1 | **App Framework** | [Streamlit](https://streamlit.io) | `1.35.0` | Entire UI — tabs, sidebar, session state, file upload, chat UI |
-| 2 | **AI / LLM** | [Google Gemini 1.5 Flash](https://aistudio.google.com) | `gemini-1.5-flash` | Chart type selection, insight generation, anomaly narration, chatbot Q&A, forecast narrative |
-| 3 | **Gemini SDK** | [google-generativeai](https://pypi.org/project/google-generativeai) | `0.7.2` | Python client that calls the Gemini REST API |
-| 4 | **Data Engine** | [Pandas](https://pandas.pydata.org) | `2.2.2` | Cleaning, type coercion, null imputation, deduplication, aggregation |
-| 5 | **Numerical** | [NumPy](https://numpy.org) | `1.26.4` | OLS regression (normal equations), IQR outlier bounds, confidence intervals |
-| 6 | **Charting** | [Plotly Express](https://plotly.com/python/plotly-express) | `5.22.0` | All charts — bar, line, pie, scatter, histogram, box, forecast with CI band |
-| 7 | **Excel I/O** | [openpyxl](https://openpyxl.readthedocs.io) | `3.1.3` | Reads `.xlsx` and `.xls` files |
-| 8 | **PDF Builder** | [ReportLab](https://www.reportlab.com) | `4.2.0` | Generates multi-page PDF — cover, KPI table, embedded chart images |
-| 9 | **Chart → PNG** | [Kaleido](https://github.com/plotly/Kaleido) | `0.2.1` | Rasterises Plotly figures to PNG bytes for PDF embedding |
-| 10 | **Statistics** | [SciPy](https://scipy.org) | `1.13.0` | Statistical support utilities |
-| 11 | **Env Config** | [python-dotenv](https://pypi.org/project/python-dotenv) | `1.0.1` | Loads `GEMINI_API_KEY` from `.env` locally |
-| 12 | **Styling** | Custom CSS (`assets/style.css`) | — | 600-line dark-theme SaaS CSS — Inter font, shimmer skeletons, toast, mobile-responsive |
-| 13 | **Hosting** | [Streamlit Cloud](https://share.streamlit.io) | free tier | Zero-cost deployment — CI/CD from GitHub push |
-| 14 | **Source Control** | [GitHub](https://github.com) | — | Version control + deployment trigger |
 
 <br/>
 
 ---
 
+## ◈   Live Screenshots
+
 <br/>
 
-## 🏗️ System Architecture
+> **Dashboard — KPI Cards + AI Charts**
+
+<!-- SCREENSHOT: paste dashboard screenshot here -->
+```
+[ paste screenshot of the Dashboard tab with KPI cards and charts here ]
+```
+
+<br/>
+
+> **Data Health Report**
+
+<!-- SCREENSHOT: paste health card screenshot here -->
+```
+[ paste screenshot of the Health tab — health score, column pills, outlier detail ]
+```
+
+<br/>
+
+> **AI Chatbot — Ask Anything**
+
+<!-- SCREENSHOT: paste Ask AI tab screenshot here -->
+```
+[ paste screenshot of a chat conversation about your data ]
+```
+
+<br/>
+
+> **30-Day Forecast**
+
+<!-- SCREENSHOT: paste Forecast tab screenshot here -->
+```
+[ paste screenshot of the forecast chart with confidence band and AI narrative ]
+```
+
+<br/>
+
+> **Export PDF**
+
+<!-- SCREENSHOT: paste Export tab screenshot here -->
+```
+[ paste screenshot of the Export tab ]
+```
+
+<br/>
+
+---
+
+## ◈   Full Tech Stack
+
+| Layer | Technology | Version | Role in this project |
+|---|---|---|---|
+| **App framework** | [Streamlit](https://streamlit.io) | `1.35.0` | UI rendering, tab routing, session state management, sidebar, file uploader |
+| **AI — language model** | [Google Gemini 1.5 Flash](https://aistudio.google.com) | `gemini-1.5-flash` | Chart type selection, insight generation, anomaly narration, chatbot Q&A, forecast narrative |
+| **AI — Python SDK** | [google-generativeai](https://pypi.org/project/google-generativeai/) | `0.7.2` | Gemini API client, multi-turn conversation history, content generation |
+| **Data engine** | [Pandas](https://pandas.pydata.org) | `2.2.2` | File loading, type coercion, null imputation, deduplication, aggregation |
+| **Numerical computing** | [NumPy](https://numpy.org) | `1.26.4` | OLS normal equations, IQR bounds, confidence intervals, regression math |
+| **Charting** | [Plotly Express](https://plotly.com/python/plotly-express/) | `5.22.0` | Bar, line, pie, scatter, histogram, box, forecast chart with CI band — all dark-themed |
+| **Excel parsing** | [openpyxl](https://openpyxl.readthedocs.io) | `3.1.3` | Reading `.xlsx` and `.xls` files |
+| **PDF generation** | [ReportLab](https://www.reportlab.com) | `4.2.0` | Multi-page PDF: cover, dataset summary table, KPI table, embedded chart images |
+| **Chart → image** | [Kaleido](https://github.com/plotly/Kaleido) | `0.2.1` | Converts Plotly figures to PNG for PDF embedding |
+| **Statistics** | [SciPy](https://scipy.org) | `1.13.0` | Statistical computation support |
+| **Environment** | [python-dotenv](https://pypi.org/project/python-dotenv/) | `1.0.1` | Loads `GEMINI_API_KEY` from `.env` locally |
+| **Styling** | Custom CSS (600+ lines) | — | Inter font, dark SaaS theme, CSS animations, loading skeletons, toast notifications, mobile breakpoints |
+| **Hosting** | [Streamlit Community Cloud](https://share.streamlit.io) | free tier | One-click deployment from GitHub, secrets manager, free public URL |
+| **Version control** | [GitHub](https://github.com) | — | Source repository and deployment trigger |
+
+<br/>
+
+---
+
+## ◈   System Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│                              USER'S BROWSER                                     │
-│                                                                                 │
-│   ┌─────────────────────────────────────────────────────────────────────────┐   │
-│   │                       STREAMLIT FRONTEND                                │   │
-│   │                                                                         │   │
-│   │   ┌──────────┐   ┌──────────────────────────────────────────────────┐  │   │
-│   │   │          │   │                    TABS                           │  │   │
-│   │   │ SIDEBAR  │   │  📊 Dashboard │ 🏥 Health │ 💬 Ask AI │ 📈 Forecast│  │   │
-│   │   │          │   │  📥 Export    │           │           │           │  │   │
-│   │   │ File     │   └──────────────────────────────────────────────────┘  │   │
-│   │   │ Upload   │                         │                               │   │
-│   │   │          │              ┌──────────▼──────────┐                    │   │
-│   │   │ Dataset  │              │   components/        │                    │   │
-│   │   │ Info     │              │   dashboard.py       │                    │   │
-│   │   │          │              │   health_card.py     │                    │   │
-│   │   │ Regen    │              │   sidebar.py         │                    │   │
-│   │   │ Button   │              └──────────┬──────────┘                    │   │
-│   │   └──────────┘                         │                               │   │
-│   └───────────────────────────────────────┼─────────────────────────────┘   │
-│                                           │                                   │
-└───────────────────────────────────────────┼───────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│                              BROWSER (User)                                         │
+│                     Streamlit Web UI — Dark Theme                                   │
+│         Dashboard · Health · Ask AI · Forecast · Export tabs                       │
+└──────────────────────────────────┬──────────────────────────────────────────────────┘
+                                   │  HTTP  (Streamlit Cloud / localhost:8501)
+┌──────────────────────────────────▼──────────────────────────────────────────────────┐
+│                           app.py  —  Entry Point                                    │
+│         Page config · CSS injection · Session state · Tab routing                  │
+└────┬──────────────┬──────────────────┬───────────────────┬────────────────────────┘
+     │              │                  │                   │
+     ▼              ▼                  ▼                   ▼
+┌─────────┐  ┌─────────────┐  ┌──────────────┐  ┌────────────────┐
+│sidebar  │  │health_card  │  │ dashboard.py │  │  Export tab    │
+│.py      │  │.py          │  │              │  │                │
+│         │  │             │  │ KPI cards    │  │ CSV download   │
+│File     │  │Health score │  │ AI charts    │  │ PDF builder    │
+│uploader │  │Column pills │  │ Anomaly radar│  │                │
+│Dataset  │  │Outlier      │  │ Chatbot UI   │  └───────┬────────┘
+│info     │  │expander     │  │ Forecast UI  │          │
+│Regen    │  └──────┬──────┘  └──────┬───────┘          │
+│button   │         │                │                   │
+└────┬────┘         │                │                   │
+     │              │                │                   │
+     └──────────────┴────────────────┴──────────┐        │
+                                                │        │
+                              ┌─────────────────▼────────▼──────────┐
+                              │              modules/                │
+                              │                                      │
+                              │  ┌──────────────────────────────┐   │
+                              │  │       cleaner.py             │   │
+                              │  │  Load → Normalise headers    │   │
+                              │  │  Coerce types → Impute nulls │   │
+                              │  │  Drop dupes → IQR outliers   │   │
+                              │  │  Health score → Gemini JSON  │   │
+                              │  └──────────────┬───────────────┘   │
+                              │                 │ CleanResult        │
+                              │  ┌──────────────▼───────────────┐   │
+                              │  │       analyzer.py            │   │
+                              │  │  get_chart_configs()         │   │
+                              │  │  get_kpi_cards()             │   │
+                              │  │  get_anomaly_narratives()    │   │
+                              │  │  ask_gemini_about_data()     │   │
+                              │  └──────────────┬───────────────┘   │
+                              │                 │                    │
+                              │  ┌──────────────▼───────────────┐   │
+                              │  │      forecaster.py           │   │
+                              │  │  OLS regression (NumPy)      │   │
+                              │  │  30–90 day horizon           │   │
+                              │  │  95% confidence intervals    │   │
+                              │  │  Gemini forecast narrative   │   │
+                              │  └──────────────┬───────────────┘   │
+                              │                 │                    │
+                              │  ┌──────────────▼───────────────┐   │
+                              │  │       exporter.py            │   │
+                              │  │  get_csv_bytes()             │   │
+                              │  │  export_charts_to_pdf()      │   │
+                              │  │  Kaleido chart rasteriser    │   │
+                              │  │  ReportLab PDF builder       │   │
+                              │  └──────────────────────────────┘   │
+                              └──────────────────┬───────────────────┘
+                                                 │  HTTPS API call
+                              ┌──────────────────▼───────────────────┐
+                              │         Google Gemini API             │
+                              │       gemini-1.5-flash model          │
+                              │                                       │
+                              │  ● Chart type selection               │
+                              │  ● Per-chart insight generation       │
+                              │  ● Anomaly business context           │
+                              │  ● Multi-turn chatbot Q&A             │
+                              │  ● Forecast trend narration           │
+                              └───────────────────────────────────────┘
+```
+
+<br/>
+
+---
+
+## ◈   Data Flow — End to End
+
+```
+  ┌────────────┐
+  │ User drops │
+  │ CSV / XLSX │
+  └─────┬──────┘
+        │
+        ▼
+  ┌─────────────────────────────────────────────────────┐
+  │                  CLEANING PIPELINE                   │
+  │                                                      │
+  │  File load  ──►  Header normalise  ──►  Type coerce  │
+  │                                                      │
+  │  Null fill  ──►  Duplicate drop   ──►  IQR outliers  │
+  │  (median / ffill / "Unknown")          per column    │
+  │                                                      │
+  │  Health score 0–100  ──►  Compact Gemini-safe JSON   │
+  │  (never sends raw data to AI — only column stats)    │
+  └──────────────────────────┬──────────────────────────┘
+                             │
+              ┌──────────────┼──────────────────────┐
+              │              │                       │
+              ▼              ▼                       ▼
+     ┌─────────────┐  ┌─────────────────┐  ┌──────────────────┐
+     │  DASHBOARD  │  │  HEALTH REPORT  │  │  AI CHATBOT      │
+     │             │  │                 │  │                  │
+     │ Gemini call │  │ Score card      │  │ User types Q     │
+     │ → JSON list │  │ Column pills    │  │ History appended │
+     │ of 6 charts │  │ Outlier expander│  │ Gemini answers   │
+     │             │  │ Type breakdown  │  │ Reply rendered   │
+     │ Plotly figs │  └─────────────────┘  │ in chat bubble   │
+     │ rendered in │                       └──────────────────┘
+     │ 2-col grid  │
+     │             │         ┌──────────────────────────────────┐
+     │ Insight box │         │  FORECAST ENGINE                 │
+     │ under each  │         │                                  │
+     │             │         │  User picks date col + targets   │
+     │ Anomaly     │         │  NumPy OLS: β = (XᵀX)⁻¹ Xᵀy    │
+     │ radar with  │         │  Future t array → predicted y    │
+     │ box plots   │         │  ±1.96σ confidence band          │
+     └─────────────┘         │  Plotly chart: hist + forecast   │
+                             │  Gemini writes trend narrative   │
+                             └──────────────────────────────────┘
                                             │
-                    ┌───────────────────────▼────────────────────────┐
-                    │              PYTHON BACKEND                      │
-                    │            (Streamlit Server)                    │
-                    │                                                  │
-                    │  ┌─────────────┐   ┌────────────────────────┐  │
-                    │  │ cleaner.py  │   │     analyzer.py         │  │
-                    │  │             │   │                         │  │
-                    │  │ • Load file │   │ • get_chart_configs()   │  │
-                    │  │ • Fix hdrs  │   │ • get_kpi_cards()       │  │
-                    │  │ • Fill null │   │ • get_anomaly_narr()    │  │
-                    │  │ • Dedup     │   │ • ask_gemini_about_data │  │
-                    │  │ • IQR       │   │                         │  │
-                    │  │ • Score     │───▶  ┌─────────────────┐    │  │
-                    │  └─────────────┘   │  │  GEMINI API     │    │  │
-                    │                    │  │  (Google Cloud) │    │  │
-                    │  ┌─────────────┐   │  │                 │    │  │
-                    │  │forecaster.py│   │  │ gemini-1.5-flash│    │  │
-                    │  │             │   │  └────────┬────────┘    │  │
-                    │  │ • OLS math  │   │           │             │  │
-                    │  │ • 30-day    │   └───────────┘             │  │
-                    │  │ • CI bands  │                              │  │
-                    │  └─────────────┘   ┌────────────────────────┐  │
-                    │                    │     exporter.py         │  │
-                    │  ┌─────────────┐   │                         │  │
-                    │  │ st.session  │   │ • CSV bytes             │  │
-                    │  │ _state[]    │   │ • ReportLab PDF         │  │
-                    │  │             │   │ • Kaleido PNG           │  │
-                    │  │ In-memory   │   └────────────────────────┘  │
-                    │  │ only —      │                                │
-                    │  │ no database │                                │
-                    │  └─────────────┘                               │
-                    └────────────────────────────────────────────────┘
+                                            ▼
+                             ┌──────────────────────────────────┐
+                             │  EXPORT                          │
+                             │                                  │
+                             │  CSV → df.to_csv() → download    │
+                             │  PDF → Kaleido rasterise figs    │
+                             │      → ReportLab assemble pages  │
+                             │      → Cover + KPI + Charts      │
+                             └──────────────────────────────────┘
 ```
 
 <br/>
 
 ---
 
-<br/>
+## ◈   AI Decision Loop
 
-## 🔄 Data Flow
+Every AI call in this project sends only a **compact JSON summary** of your data — never the raw rows. This keeps token usage minimal, costs zero, and keeps your data private.
 
 ```
-                              ┌─────────────────┐
-                              │  User uploads   │
-                              │  CSV / Excel    │
-                              └────────┬────────┘
-                                       │
-                                       ▼
-                    ┌──────────────────────────────────────┐
-                    │         modules/cleaner.py            │
-                    │                                       │
-                    │  1 ─ Load with encoding fallback      │
-                    │       utf-8 → latin-1 → cp1252        │
-                    │                                       │
-                    │  2 ─ Normalise headers                │
-                    │       "Total Revenue " → total_revenue│
-                    │                                       │
-                    │  3 ─ Coerce types                     │
-                    │       "123" → int  "2024-01" → date   │
-                    │                                       │
-                    │  4 ─ Impute nulls                     │
-                    │       numeric → median                │
-                    │       datetime → ffill/bfill          │
-                    │       text → "Unknown"                │
-                    │       (skips if null% > 40%)          │
-                    │                                       │
-                    │  5 ─ Drop full duplicate rows         │
-                    │                                       │
-                    │  6 ─ IQR outlier detection            │
-                    │       flag per numeric column         │
-                    │                                       │
-                    │  7 ─ Compute health score 0–100       │
-                    │       penalty: nulls + dupes + outlier│
-                    │                                       │
-                    │  8 ─ build_gemini_summary()           │
-                    │       compact JSON, never raw data    │
-                    │       column names + types + describe │
-                    │       + 5-row sample only             │
-                    └──────────────┬───────────────────────┘
-                                   │
-                    ┌──────────────▼───────────────────────┐
-                    │     CleanResult dataclass             │
-                    │     (held in st.session_state)        │
-                    └──┬──────────┬────────────┬───────────┘
-                       │          │            │
-             ┌─────────▼──┐  ┌───▼──────┐  ┌─▼──────────┐
-             │ Health Card │  │ Analyzer │  │ Forecaster │
-             │             │  │          │  │            │
-             │ Score, pills│  │ Gemini → │  │ OLS → 30d  │
-             │ Column types│  │ charts   │  │ + Gemini   │
-             │ Null % / col│  │ + KPIs   │  │ narrative  │
-             │ Outlier list│  │ + anomaly│  │            │
-             └─────────────┘  │ + chatbot│  └────────────┘
-                               └────┬─────┘
-                                    │
-                             ┌──────▼──────┐
-                             │   Plotly    │
-                             │   Charts    │
-                             │  rendered   │
-                             │  in browser │
-                             └─────────────┘
+What Gemini receives:
+{
+  "shape": { "rows": 5000, "cols": 12 },
+  "columns": [
+    { "name": "revenue",    "type": "numeric",  "null_pct": 0.0, "outlier_count": 3 },
+    { "name": "order_date", "type": "datetime", "null_pct": 0.2, "outlier_count": 0 }
+  ],
+  "describe": { "revenue": { "mean": 4200, "std": 800, "min": 120, "max": 18000 } },
+  "sample_rows": [ first 5 rows only ],
+  "health_score": 87
+}
+
+What Gemini returns (chart selection example):
+[
+  {
+    "chart_type": "line",
+    "x": "order_date",
+    "y": "revenue",
+    "title": "Revenue Trend Over Time",
+    "insight": "Revenue shows a consistent upward trend with a notable spike in Q3,
+                likely driven by seasonal demand. Consider aligning inventory and
+                marketing spend with this pattern."
+  }
+]
 ```
+
+**Your raw data never leaves your machine or Streamlit session.**
 
 <br/>
 
 ---
 
-<br/>
+## ◈   Privacy & Data Security
 
-## 🔒 Data Privacy — One Line
-
-> **Your data never leaves your session** — nothing is written to disk, no database exists, no server stores your file; it lives in `st.session_state` (Python RAM) and is destroyed the moment you close the browser tab.
+> 🔒 **Your data is never stored, logged, or shared.**
+> All processing happens inside your Streamlit session in memory — when you close the tab, everything is gone.
 
 <br/>
 
 ---
 
-<br/>
-
-## 📁 Project Structure
+## ◈   Project Structure
 
 ```
 ai-bi-dashboard/
 │
-├── 📄 app.py                    ← Entry point — page config, CSS injection,
-│                                  session state, tab routing, upload hero
+├── app.py                    ← Main entry: page config, CSS, session state, tab routing
 │
-├── 📦 modules/                  ← Pure business logic (zero Streamlit imports)
-│   ├── cleaner.py               ← Full ETL pipeline → CleanResult dataclass
-│   ├── analyzer.py              ← Gemini: charts · KPIs · anomalies · chatbot
-│   ├── forecaster.py            ← NumPy OLS regression · ForecastResult dataclass
-│   └── exporter.py              ← get_csv_bytes() · export_charts_to_pdf()
+├── modules/                  ← Business logic — no Streamlit calls inside
+│   ├── cleaner.py            ← CleanResult dataclass + full cleaning pipeline
+│   ├── analyzer.py           ← All Gemini calls: charts, KPIs, anomalies, chatbot
+│   ├── forecaster.py         ← OLS regression engine + ForecastResult dataclass
+│   └── exporter.py           ← CSV bytes + ReportLab PDF assembler
 │
-├── 🧩 components/               ← Streamlit UI renderers
-│   ├── sidebar.py               ← File uploader · dataset info · action buttons
-│   ├── health_card.py           ← Health score card · column pills · outlier list
-│   └── dashboard.py             ← render_dashboard() · render_chatbot()
-│                                   render_forecast() · render_export()
+├── components/               ← Pure UI renderers — all Streamlit calls live here
+│   ├── sidebar.py            ← File uploader, dataset stats panel, action buttons
+│   ├── health_card.py        ← Health score card, column pills, outlier expander
+│   └── dashboard.py          ← KPI grid, chart grid, anomaly radar,
+│                                chatbot UI, forecast renderer, export renderer
 │
-├── 🎨 assets/
-│   └── style.css                ← 600-line dark SaaS CSS
-│                                   Inter font · shimmer skeletons · toast
-│                                   KPI cards · anomaly callouts · mobile
+├── assets/
+│   └── style.css             ← 600+ line dark SaaS CSS:
+│                                Inter font · CSS variables · animations
+│                                Loading skeletons · Toast notifications
+│                                Mobile breakpoints @ 768px and 480px
 │
-├── 📋 requirements.txt          ← All dependencies, pinned versions
-├── 🔑 .env.example              ← API key template
-├── 🚫 .gitignore                ← Excludes .env · venv · __pycache__
-└── 📖 README.md                 ← This file
+├── requirements.txt          ← All dependencies with pinned versions
+├── .env.example              ← Template: GEMINI_API_KEY=your_key_here
+├── .gitignore                ← Excludes .env · venv/ · __pycache__/ · *.pdf
+└── README.md                 ← This file
 ```
 
 <br/>
 
 ---
 
-<br/>
+## ◈   Getting Started
 
-## 🤖 AI Analyst — What Gemini Does
+### Requirements
 
-This app replaces an entire junior-to-mid data analyst workflow. Here is every AI call made, in sequence:
+- Python **3.11** or higher
+- A free Gemini API key — get one at [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    GEMINI 1.5 FLASH — CALL MAP                              │
-├──────┬──────────────────────────┬───────────────────────────────────────────┤
-│  #   │  Function                │  What Gemini is asked to do               │
-├──────┼──────────────────────────┼───────────────────────────────────────────┤
-│  1   │ get_chart_configs()      │ Read column names, types, 5-row sample.   │
-│      │                          │ Pick the 6 best chart types. Return JSON  │
-│      │                          │ array: {type, x, y, title, insight}       │
-├──────┼──────────────────────────┼───────────────────────────────────────────┤
-│  2   │ get_anomaly_narratives() │ For each IQR-flagged column: explain WHY  │
-│      │                          │ this outlier matters in business terms.   │
-│      │                          │1 sentence, column-specific, max 30 words  │
-├──────┼──────────────────────────┼───────────────────────────────────────────┤
-│  3   │ ask_gemini_about_data()  │ Full NL chatbot. Receives: dataset        │
-│      │                          │ summary + full conversation history       │
-│      │                          │ (last 10 turns). Returns plain English.   │
-├──────┼──────────────────────────┼───────────────────────────────────────────┤
-│  4   │ _get_narrative()         │ For each forecasted column: interpret     │
-│  (forecaster.py)                │ trend direction, slope, R², % change.    │
-│      │                          │ 2-sentence business interpretation.       │
-└──────┴──────────────────────────┴───────────────────────────────────────────┘
-
-Token safety: raw dataframes are NEVER sent to Gemini.
-Only a compact summary (column metadata + describe() stats + 5-row sample)
-is sent — keeping every call well within the free-tier context window.
-```
-
-<br/>
-
----
-
-<br/>
-
-## 📸 Screenshots
-
-<br/>
-
-### Upload Landing Page
-> *Screenshot — drag & drop hero, feature grid, animated uploader*
-
-```
-[ PASTE SCREENSHOT HERE ]
-```
-
----
-
-### Dashboard — KPI Cards + AI Charts
-> *Screenshot — 4 KPI metric cards + 6 Gemini-selected Plotly charts with insights*
-
-```
-[ PASTE SCREENSHOT HERE ]
-```
-
----
-
-### Anomaly Radar
-> *Screenshot — red callout cards + mini box-plots per flagged column*
-
-```
-[ PASTE SCREENSHOT HERE ]
-```
-
----
-
-### Ask AI — Chatbot
-> *Screenshot — chat bubbles, starter question buttons, multi-turn conversation*
-
-```
-[ PASTE SCREENSHOT HERE ]
-```
-
----
-
-### Forecast Tab
-> *Screenshot — historical line + dashed forecast + shaded confidence band + AI narrative*
-
-```
-[ PASTE SCREENSHOT HERE ]
-```
-
----
-
-### Data Health Report
-> *Screenshot — health score card, column null pills, outlier detail, type breakdown*
-
-```
-[ PASTE SCREENSHOT HERE ]
-```
-
-<br/>
-
----
-
-<br/>
-
-## 🚀 Local Setup — Windows PowerShell
+### Setup — Windows PowerShell
 
 ```powershell
-# Step 1 — Clone
+# Clone
 git clone https://github.com/YOUR_USERNAME/ai-bi-dashboard.git
 cd ai-bi-dashboard
 
-# Step 2 — Virtual environment
+# Virtual environment
 python -m venv venv
 .\venv\Scripts\Activate.ps1
-# If policy error: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-# Step 3 — Dependencies
+# If you get a policy error, run this once first:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# Install dependencies
 pip install -r requirements.txt
 
-# Step 4 — API key
+# Add your Gemini API key
 Copy-Item .env.example .env
-# Open .env and set: GEMINI_API_KEY=your_key_here
-# Get free key → https://aistudio.google.com/app/apikey
+# Open .env and replace: GEMINI_API_KEY=your_actual_key_here
 
-# Step 5 — Run
+# Run
 streamlit run app.py
-# Opens at http://localhost:8501
+```
+
+Open **http://localhost:8501** in your browser.
+
+### Setup — Mac / Linux
+
+```bash
+git clone https://github.com/YOUR_USERNAME/ai-bi-dashboard.git
+cd ai-bi-dashboard
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+# Edit .env — add your key
+streamlit run app.py
 ```
 
 <br/>
 
 ---
 
-<br/>
+## ◈   Environment Variables
 
-## ☁️ Deploy to Streamlit Cloud (Free)
+| Variable | Required | Description |
+|---|---|---|
+| `GEMINI_API_KEY` | ✅ Yes | Your Google Gemini API key. Free at [aistudio.google.com](https://aistudio.google.com/app/apikey) |
 
+**Locally** — add to `.env`:
 ```
-1. Push repo to GitHub
-2. Go to → https://share.streamlit.io
-3. New app → select repo → main file: app.py
-4. Advanced settings → Secrets → add:
-      GEMINI_API_KEY = "your_key_here"
-5. Click Deploy
-   └── Live public URL in ~2 minutes
+GEMINI_API_KEY=your_key_here
+```
+
+**On Streamlit Cloud** — add under **App Settings → Secrets**:
+```toml
+GEMINI_API_KEY = "your_key_here"
 ```
 
 <br/>
 
 ---
 
+## ◈   Deploy to Streamlit Cloud (Free)
+
+```
+1.  Push this repo to GitHub (make sure .env is in .gitignore — it already is)
+
+2.  Go to → https://share.streamlit.io
+
+3.  New app → select your repo → main file: app.py
+
+4.  Advanced settings → Secrets → paste:
+        GEMINI_API_KEY = "your_key_here"
+
+5.  Click Deploy
+    └─ Your app is live at a free public URL in ~2 minutes
+```
+
 <br/>
 
-## 💰 Cost Breakdown
+---
+
+## ◈   What The AI Actually Does
+
+This project uses Gemini 1.5 Flash as a **reasoning layer** — not just a text generator. Here is exactly what each AI call does:
+
+| Call | When triggered | What it receives | What it returns |
+|---|---|---|---|
+| `get_chart_configs()` | First Dashboard load after upload | Column names, types, null %, sample rows, describe() stats | JSON array of up to 6 chart configs with type, x, y, title, 2-sentence insight |
+| `get_anomaly_narratives()` | After charts load, if outliers detected | Column name, outlier count, mean, median, sample outlier values | One business-context sentence per anomaly column |
+| `ask_gemini_about_data()` | Every chat message | Full conversation history (last 10 turns) + dataset summary | Plain-English answer to the user's question |
+| `_get_narrative()` | After OLS forecast computed | Slope, R², trend direction, historical avg, forecasted end value | Two-sentence business interpretation of the trend |
+
+All four calls send only **summary statistics** — never raw row data.
+
+<br/>
+
+---
+
+## ◈   Troubleshooting
+
+| Error | Fix |
+|---|---|
+| `(venv)` not in terminal prompt | Run `.\venv\Scripts\Activate.ps1` again |
+| `ModuleNotFoundError` | Activate venv first, then re-run `pip install -r requirements.txt` |
+| `GEMINI_API_KEY not found` | Check `.env` exists and has no spaces around `=` |
+| `openpyxl` missing | `pip install openpyxl` inside the venv |
+| `kaleido` install fails | `pip install kaleido==0.2.1 --pre` |
+| Port already in use | `streamlit run app.py --server.port 8502` |
+| Sidebar disappeared | Click the **›** arrow pinned at the top-left of the screen |
+| PDF export blank | Ensure kaleido is installed: `pip show kaleido` |
+
+<br/>
+
+---
+
+## ◈   Cost Breakdown
 
 | Service | Cost |
-|---------|------|
-| Streamlit Cloud hosting | **Free** |
-| GitHub repository | **Free** |
-| Google Gemini API (free tier via Google AI Studio) | **Free** |
-| All Python libraries | **Free / Open source** |
+|---|---|
+| Streamlit Community Cloud | **Free** |
+| GitHub | **Free** |
+| Google Gemini API (free tier) | **Free** |
+| All Python libraries | **Free / Open Source** |
 | **Total monthly cost** | **₹ 0** |
 
 <br/>
 
 ---
 
-<br/>
+## ◈   Roadmap
 
-## 🔧 Troubleshooting
-
-| Error | Fix |
-|-------|-----|
-| `(venv)` not showing in terminal | Run `.\venv\Scripts\Activate.ps1` |
-| `ModuleNotFoundError` | Activate venv first, then `pip install -r requirements.txt` |
-| `GEMINI_API_KEY not found` | Check `.env` exists with correct key, no spaces around `=` |
-| `SyntaxError: from __future__` | Ensure `from __future__ import annotations` is line 1 of the file |
-| `TypeError: duplicate keyword margin` | Replace `components/dashboard.py` with latest version |
-| Sidebar invisible | Click the `›` arrow pinned at top-left of screen |
-| Charts not generating | Click **🔄 Regenerate AI Charts** in sidebar |
-| PDF export fails | Run `pip install kaleido==0.2.1 reportlab==4.2.0` |
-| Port already in use | `streamlit run app.py --server.port 8502` |
+- [ ] Multi-file merge — upload two CSVs, join on a common column, query across both
+- [ ] Executive Summary Generator — one-click Gemini business report (300–400 words)
+- [ ] Custom chart builder — user picks their own x/y columns
+- [ ] Google Sheets import via URL
+- [ ] Scheduled email reports
 
 <br/>
 
 ---
 
-<br/>
-
-## 🗓️ Build Phases
+## ◈   License
 
 ```
-Week 1 — Phase 1   File upload · Auto-cleaning · Data health card
-Week 2 — Phase 2   KPI cards · Gemini chart selection · Anomaly radar
-Week 3 — Phase 3   NL chatbot · Conversation memory · Starter questions
-Week 4 — Phase 4   30-day forecast · PDF export · Production CSS polish
+MIT License — Copyright (c) 2025
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 ```
 
 <br/>
 
 ---
-
-<br/>
 
 <div align="center">
 
-```
-Built with  ♥  using Streamlit · Pandas · Plotly · Google Gemini 1.5 Flash
-```
+**Built with Python · Streamlit · Google Gemini · Plotly · ReportLab**
 
-**[⭐ Star this repo](https://github.com/YOUR_USERNAME/ai-bi-dashboard)** if it saved you time.
+*If this project helped you, give it a ⭐ on GitHub*
 
 <br/>
 
-![Made with Python](https://img.shields.io/badge/Made_with-Python_3.11-3776AB?style=flat-square&logo=python&logoColor=white)
-![AI Powered](https://img.shields.io/badge/AI_Powered-Gemini_1.5-4285F4?style=flat-square&logo=google&logoColor=white)
-![Zero Cost](https://img.shields.io/badge/Zero_Cost-₹_0_/_month-10b981?style=flat-square)
+```
+Upload. Clean. Visualise. Ask. Forecast. Export.
+         The full data analyst workflow.
+              Automated. Free. Yours.
+```
 
 </div>
