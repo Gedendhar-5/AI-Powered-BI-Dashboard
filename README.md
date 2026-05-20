@@ -108,12 +108,10 @@ You upload a file. The AI does the rest.
 
 > **30-Day Forecast**
 
-<!-- SCREENSHOT: paste Forecast tab screenshot here -->
-```
-[ paste screenshot of the forecast chart with confidence band and AI narrative ]
-```
+![Forecast ](<samples/Forecast.png>)
 
 <br/>
+
 
 > **Export PDF**
 
