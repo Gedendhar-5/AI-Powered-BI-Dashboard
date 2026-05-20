@@ -156,6 +156,7 @@ You upload a file. The AI does the rest.
 
 ## ◈   System Architecture
 
+![System Architecture](<samples/System Architecture.png>)
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
 │                              BROWSER (User)                                         │
