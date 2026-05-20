@@ -50,31 +50,35 @@ No SQL. No Python knowledge required. No paid cloud services. **₹0/month.**
 
 <br/>
 
-## 🗺️ Feature Map
+## 🗺️ Capabilities
 
-```
-╔══════════════════════════════════════════════════════════════════════════════════╗
-║                         AI-POWERED BI DASHBOARD  v1.0                           ║
-╠══════════════╦═══════════════╦══════════════╦══════════════╦═════════════════════╣
-║   PHASE 1    ║    PHASE 2    ║   PHASE 3    ║   PHASE 4    ║      PHASE 4        ║
-║  Data Engine ║   AI Charts   ║  AI Chatbot  ║  Forecasting ║      Export         ║
-╠══════════════╬═══════════════╬══════════════╬══════════════╬═════════════════════╣
-║              ║               ║              ║              ║                     ║
-║ ▸ CSV upload ║ ▸ KPI cards   ║ ▸ NL Q&A     ║ ▸ OLS linear ║ ▸ Clean CSV         ║
-║ ▸ Excel read ║ ▸ Gemini auto ║ ▸ Chat memory║   regression ║ ▸ Full PDF report   ║
-║ ▸ Auto-clean ║   chart picks ║ ▸ Starter Qs ║ ▸ 30-day fwd ║ ▸ Charts as images  ║
-║ ▸ Null fill  ║ ▸ Bar/Line/   ║ ▸ Follow-ups ║ ▸ Conf bands ║ ▸ KPI summary table ║
-║ ▸ Dedup rows ║   Pie/Scatter ║ ▸ Clear hist ║ ▸ R² score   ║ ▸ Cover page        ║
-║ ▸ Header fix ║   /Hist/Box   ║              ║ ▸ AI trend   ║ ▸ Dark-theme PDF    ║
-║ ▸ Type infer ║ ▸ AI insights ║              ║   narrative  ║                     ║
-║ ▸ IQR detect ║   per chart   ║              ║ ▸ Multi-col  ║                     ║
-║ ▸ Health 0–  ║ ▸ Anomaly     ║              ║   forecast   ║                     ║
-║   100 score  ║   box plots   ║              ║ ▸ Horizon    ║                     ║
-║ ▸ Column     ║ ▸ Gemini      ║              ║   slider     ║                     ║
-║   null pills ║   narratives  ║              ║   7–90 days  ║                     ║
-║              ║               ║              ║              ║                     ║
-╚══════════════╩═══════════════╩══════════════╩══════════════╩═════════════════════╝
-```
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                     │
+│   UPLOAD ANY FILE          AUTO-CLEAN              AI VISUALISE                     │
+│   ─────────────────        ──────────────          ─────────────────                │
+│   CSV · XLSX · XLS    →    Nulls filled       →    Gemini picks the                 │
+│   Up to 200 MB             Dupes removed           best 6 chart types               │
+│   Multi-encoding           Headers fixed           for your columns                 │
+│   support                  Types coerced           Bar · Line · Pie                 │
+│                            Outliers flagged        Scatter · Histogram              │
+│                            Health scored           Box · Donut                      │
+│                                                    2-sentence AI insight            │
+│                                                    under every chart                │
+│                                                                                     │
+│   ASK ANYTHING             DETECT ANOMALIES        FORECAST TRENDS                  │
+│   ─────────────────        ──────────────          ─────────────────                │
+│   Plain-English Q&A   →    IQR detection      →    OLS linear regression            │
+│   Multi-turn memory        Per-column stats        Up to 90-day horizon             │
+│   Starter questions        Box-plot visual         95% confidence band              │
+│   Follow-up support        Gemini narrates         Daily slope + R² score           │
+│   No SQL needed            why it matters          Gemini trend narrative           │
+│                            Business context                                         │
+│                                                                                     │
+│   EXPORT EVERYTHING                                                                 │
+│   ─────────────────────────────────────────────────────────────────────             │
+│   Download cleaned CSV  ·  Generate full PDF report  ·  Charts embedded in PDF      │
+│                                                                                     │
+└─────────────────────────────────────────────────────────────────────────────────────┘
 
 <br/>
 
