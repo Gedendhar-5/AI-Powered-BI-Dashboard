@@ -305,25 +305,6 @@ GEMINI_API_KEY = "your_key_here"
 
 ---
 
-## ◈   Deploy to Streamlit Cloud (Free)
-
-```
-1.  Push this repo to GitHub (make sure .env is in .gitignore — it already is)
-
-2.  Go to → https://share.streamlit.io
-
-3.  New app → select your repo → main file: app.py
-
-4.  Advanced settings → Secrets → paste:
-        GEMINI_API_KEY = "your_key_here"
-
-5.  Click Deploy
-    └─ Your app is live at a free public URL in ~2 minutes
-```
-
-<br/>
-
----
 
 ## ◈   What The AI Actually Does
 
