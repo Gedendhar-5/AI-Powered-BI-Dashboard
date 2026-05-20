@@ -197,7 +197,7 @@ except Exception:
     direction_word = {
         "upward": "rise",
         "downward": "fall",
-        "flat": "remain stable"
+        "flat": "remain stable",
     }[trend]
 
     return (
