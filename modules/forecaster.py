@@ -170,21 +170,40 @@ def _get_narrative(
     )
 
     try:
-        model     = _get_model()
-        response  = model.chat.completions.create(
-    model="llama-3.3-70b-versatile",
-    messages=[{"role": "user", "content": prompt}],
-    temperature=0.3,
-)
-narrative = response.choices[0].message.content.strip().replace("\n", " ")
-        words     = narrative.split()
-        if len(words) > 60:
-            narrative = " ".join(words[:60]) + "…"
-        return narrative
-    except Exception:
-        direction_word = {"upward": "rise", "downward": "fall", "flat": "remain stable"}[trend]
-        return (
-            f'Based on historical data, "{col}" is projected to {direction_word} '
-            f"by approximately {abs(pct_chg):.1f}% over the next {horizon} days. "
-            f"Regression R² = {r_sq:.2f} — {'reliable' if r_sq > 0.6 else 'low confidence'} fit."
-        )
+    model = _get_model()
+
+    response = model.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.3,
+    )
+
+    narrative = (
+        response.choices[0]
+        .message.content
+        .strip()
+        .replace("\n", " ")
+    )
+
+    words = narrative.split()
+
+    if len(words) > 60:
+        narrative = " ".join(words[:60]) + "…"
+
+    return narrative
+
+except Exception:
+
+    direction_word = {
+        "upward": "rise",
+        "downward": "fall",
+        "flat": "remain stable"
+    }[trend]
+
+    return (
+        f'Based on historical data, "{col}" is projected to '
+        f'{direction_word} by approximately {abs(pct_chg):.1f}% '
+        f'over the next {horizon} days. '
+        f'Regression R² = {r_sq:.2f} — '
+        f'{"reliable" if r_sq > 0.6 else "low confidence"} fit.'
+    )
