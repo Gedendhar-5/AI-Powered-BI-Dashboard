@@ -379,4 +379,4 @@ def build_gemini_summary(result: CleanResult) -> dict:
         "describe": describe_dict,
         "sample_rows": sample,
         "health_score": result.health_score,
-    }
+  }
