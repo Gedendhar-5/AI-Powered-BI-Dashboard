@@ -26,18 +26,17 @@ from groq import Groq
 # Gemini client — shared initialiser
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _get_model() -> genai.GenerativeModel:
+def _get_model() -> Groq:
     try:
-        api_key = st.secrets["GEMINI_API_KEY"]
+        api_key = st.secrets["GROQ_API_KEY"]
     except Exception:
-        api_key = os.getenv("GEMINI_API_KEY")
+        api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
         raise ValueError(
-            "GEMINI_API_KEY not found. Add it to .env locally "
+            "GROQ_API_KEY not found. Add it to .env locally "
             "or to Streamlit Cloud secrets in production."
         )
-    genai.configure(api_key=api_key)
-    return genai.GenerativeModel("gemini-2.5-flash")
+    return Groq(api_key=api_key)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -83,8 +82,12 @@ Rules:
 - If categorical columns exist with <=8 unique values: use bar or pie
 """
 
-    response = model.generate_content(prompt)
-    raw = response.text.strip()
+    response = model.chat.completions.create(
+    model="llama-3.3-70b-versatile",
+    messages=[{"role": "user", "content": prompt}],
+    temperature=0.3,
+)
+raw = response.choices[0].message.content.strip()
 
     # Strip markdown code fences if Gemini adds them
     raw = re.sub(r"^```(?:json)?\s*", "", raw, flags=re.MULTILINE)
