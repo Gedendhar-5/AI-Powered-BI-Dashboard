@@ -161,63 +161,8 @@ You upload a file. The AI does the rest.
 
 ## ◈   Data Flow — End to End
 
-```
-  ┌────────────┐
-  │ User drops │
-  │ CSV / XLSX │
-  └─────┬──────┘
-        │
-        ▼
-  ┌─────────────────────────────────────────────────────┐
-  │                  CLEANING PIPELINE                   │
-  │                                                      │
-  │  File load  ──►  Header normalise  ──►  Type coerce  │
-  │                                                      │
-  │  Null fill  ──►  Duplicate drop   ──►  IQR outliers  │
-  │  (median / ffill / "Unknown")          per column    │
-  │                                                      │
-  │  Health score 0–100  ──►  Compact Gemini-safe JSON   │
-  │  (never sends raw data to AI — only column stats)    │
-  └──────────────────────────┬──────────────────────────┘
-                             │
-              ┌──────────────┼──────────────────────┐
-              │              │                       │
-              ▼              ▼                       ▼
-     ┌─────────────┐  ┌─────────────────┐  ┌──────────────────┐
-     │  DASHBOARD  │  │  HEALTH REPORT  │  │  AI CHATBOT      │
-     │             │  │                 │  │                  │
-     │ Gemini call │  │ Score card      │  │ User types Q     │
-     │ → JSON list │  │ Column pills    │  │ History appended │
-     │ of 6 charts │  │ Outlier expander│  │ Gemini answers   │
-     │             │  │ Type breakdown  │  │ Reply rendered   │
-     │ Plotly figs │  └─────────────────┘  │ in chat bubble   │
-     │ rendered in │                       └──────────────────┘
-     │ 2-col grid  │
-     │             │         ┌──────────────────────────────────┐
-     │ Insight box │         │  FORECAST ENGINE                 │
-     │ under each  │         │                                  │
-     │             │         │  User picks date col + targets   │
-     │ Anomaly     │         │  NumPy OLS: β = (XᵀX)⁻¹ Xᵀy    │
-     │ radar with  │         │  Future t array → predicted y    │
-     │ box plots   │         │  ±1.96σ confidence band          │
-     └─────────────┘         │  Plotly chart: hist + forecast   │
-                             │  Gemini writes trend narrative   │
-                             └──────────────────────────────────┘
-                                            │
-                                            ▼
-                             ┌──────────────────────────────────┐
-                             │  EXPORT                          │
-                             │                                  │
-                             │  CSV → df.to_csv() → download    │
-                             │  PDF → Kaleido rasterise figs    │
-                             │      → ReportLab assemble pages  │
-                             │      → Cover + KPI + Charts      │
-                             └──────────────────────────────────┘
-```
+![Data Flow](<samples/DATA PIPELINE.png>)
 
-<br/>
-
----
 
 ## ◈   AI Decision Loop
 
