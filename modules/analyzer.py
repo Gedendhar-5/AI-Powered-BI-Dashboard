@@ -220,8 +220,12 @@ def get_anomaly_narratives(
         )
 
         try:
-            response  = model.generate_content(prompt)
-            narrative = response.text.strip().replace("\n", " ")
+            response  = model.chat.completions.create(
+    model="llama-3.3-70b-versatile",
+    messages=[{"role": "user", "content": prompt}],
+    temperature=0.4,
+)
+            narrative = response.choices[0].message.content.strip().replace("\n", " ")
             # Truncate if Gemini ignores the word limit
             words = narrative.split()
             if len(words) > 40:
