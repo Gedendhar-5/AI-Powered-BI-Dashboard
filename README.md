@@ -89,7 +89,8 @@ You upload a file. The AI does the rest.
 ![Dashboard](<samples/image.png>)
 
 <br/>
-> **Data Health Report + Visual Board**
+
+**Data Health Report + Visual Board**
 
 ![Health Board](<samples/health.png>)
 <br/>
