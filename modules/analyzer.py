@@ -299,15 +299,24 @@ def ask_gemini_about_data(
     )
 
     # Build the Gemini contents list: alternate user/model turns
-    messages = [{"role": "system", "content": system_context}]
-for turn in history[-10:]:
-    role = "user" if turn["role"] == "user" else "assistant"
-    messages.append({"role": role, "content": turn["content"]})
-messages.append({"role": "user", "content": question})
+     messages = [{"role": "system", "content": system_context}]
 
-response = model.chat.completions.create(
-    model="llama-3.3-70b-versatile",
-    messages=messages,
-    temperature=0.4,
-)
-return response.choices[0].message.content.strip()
+    for turn in history[-10:]:
+        role = "user" if turn["role"] == "user" else "assistant"
+        messages.append({
+            "role": role,
+            "content": turn["content"]
+        })
+
+    messages.append({
+        "role": "user",
+        "content": question
+    })
+
+    response = model.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=messages,
+        temperature=0.4,
+    )
+
+    return response.choices[0].message.content.strip()
