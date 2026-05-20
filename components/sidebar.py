@@ -33,14 +33,6 @@ def render_sidebar() -> object | None:
 
         st.divider()
 
-        # ── Tip ──
-        st.info(
-            "💡 **Sidebar closed?**  \nClick the **›** arrow at the top-left of the screen to reopen.",
-            icon=None,
-        )
-
-        st.divider()
-
         # ── Dataset info after upload ──
         result = st.session_state.get("clean_result")
         if result is not None:
