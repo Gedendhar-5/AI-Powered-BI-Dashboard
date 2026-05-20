@@ -49,29 +49,29 @@ You upload a file. The AI does the rest.
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                     │
-│   UPLOAD ANY FILE          AUTO-CLEAN              AI VISUALISE                    │
-│   ─────────────────        ──────────────          ─────────────────               │
-│   CSV · XLSX · XLS    →    Nulls filled       →    Gemini picks the               │
-│   Up to 200 MB             Dupes removed           best 6 chart types              │
-│   Multi-encoding           Headers fixed           for your columns                │
-│   support                  Types coerced           Bar · Line · Pie               │
-│                            Outliers flagged        Scatter · Histogram             │
-│                            Health scored           Box · Donut                    │
-│                                                    2-sentence AI insight           │
-│                                                    under every chart               │
+│   UPLOAD ANY FILE          AUTO-CLEAN              AI VISUALISE                     │
+│   ─────────────────        ──────────────          ─────────────────                │
+│   CSV · XLSX · XLS    →    Nulls filled       →    Gemini picks the                 │
+│   Up to 200 MB             Dupes removed           best 6 chart types               │
+│   Multi-encoding           Headers fixed           for your columns                 │
+│   support                  Types coerced           Bar · Line · Pie                 │
+│                            Outliers flagged        Scatter · Histogram              │
+│                            Health scored           Box · Donut                      │
+│                                                    2-sentence AI insight            │
+│                                                    under every chart                │
 │                                                                                     │
-│   ASK ANYTHING             DETECT ANOMALIES        FORECAST TRENDS                 │
-│   ─────────────────        ──────────────          ─────────────────               │
-│   Plain-English Q&A   →    IQR detection      →    OLS linear regression          │
-│   Multi-turn memory        Per-column stats        Up to 90-day horizon            │
-│   Starter questions        Box-plot visual         95% confidence band             │
-│   Follow-up support        Gemini narrates         Daily slope + R² score          │
-│   No SQL needed            why it matters          Gemini trend narrative          │
-│                            Business context                                        │
+│   ASK ANYTHING             DETECT ANOMALIES        FORECAST TRENDS                  │
+│   ─────────────────        ──────────────          ─────────────────                │
+│   Plain-English Q&A   →    IQR detection      →    OLS linear regression            │
+│   Multi-turn memory        Per-column stats        Up to 90-day horizon             │
+│   Starter questions        Box-plot visual         95% confidence band              │
+│   Follow-up support        Gemini narrates         Daily slope + R² score           │
+│   No SQL needed            why it matters          Gemini trend narrative           │
+│                            Business context                                         │
 │                                                                                     │
 │   EXPORT EVERYTHING                                                                 │
-│   ─────────────────────────────────────────────────────────────────────            │
-│   Download cleaned CSV  ·  Generate full PDF report  ·  Charts embedded in PDF    │
+│   ─────────────────────────────────────────────────────────────────────             │
+│   Download cleaned CSV  ·  Generate full PDF report  ·  Charts embedded in PDF      │
 │                                                                                     │
 └─────────────────────────────────────────────────────────────────────────────────────┘
 ```
