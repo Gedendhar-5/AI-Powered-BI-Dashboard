@@ -52,6 +52,9 @@ No SQL. No Python knowledge required. No paid cloud services. **₹0/month.**
 
 ## 🗺️ Capabilities
 
+
+```
+
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                     │
 │   UPLOAD ANY FILE          AUTO-CLEAN              AI VISUALISE                     │
@@ -80,6 +83,7 @@ No SQL. No Python knowledge required. No paid cloud services. **₹0/month.**
 │                                                                                     │
 └─────────────────────────────────────────────────────────────────────────────────────┘
 
+```
 <br/>
 
 ---
