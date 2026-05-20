@@ -99,11 +99,10 @@ You upload a file. The AI does the rest.
 <br/>
 
 > **AI Chatbot — Ask Anything**
+![AIFAQ](<samples/AIFAQ.png>)
 
-<!-- SCREENSHOT: paste Ask AI tab screenshot here -->
-```
-[ paste screenshot of a chat conversation about your data ]
-```
+<br/>
+
 
 <br/>
 
